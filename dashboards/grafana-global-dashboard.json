@@ -1,0 +1,42 @@
+{
+  "dashboard": {
+    "uid": "porttrack-global",
+    "title": "PortTrack - Visión Global",
+    "timezone": "utc",
+    "panels": [
+      {
+        "type": "graph",
+        "id": 1,
+        "title": "Tasa de solicitudes y errores (global)",
+        "datasource": "Prometheus",
+        "targets": [
+          { "expr": "sum(rate(http_requests_total{job=\"porttrack\"}[5m]))", "legendFormat": "Total req/s" },
+          { "expr": "sum(rate(http_requests_total{job=\"porttrack\",status=~\"5..\"}[5m]))", "legendFormat": "Errores 5xx req/s" }
+        ],
+        "yaxes": [ { "format": "ops", "min": 0 }, { "format": "ops", "min": 0 } ]
+      },
+      {
+        "type": "gauge",
+        "id": 2,
+        "title": "Uso CPU promedio cluster",
+        "datasource": "Prometheus",
+        "targets": [
+          { "expr": "avg(node_cpu_seconds_total{mode!=\"idle\"}) / avg(node_cpu_seconds_total) * 100", "legendFormat": "CPU %" }
+        ],
+        "fieldConfig": { "defaults": { "unit": "percent", "max": 100 } }
+      }
+    ],
+    "annotations": {
+      "list": [
+        {
+          "name": "Deploys",
+          "datasource": "Prometheus",
+          "expr": "changes(deployment_version{environment=\"prod\"}[1m])",
+          "iconColor": "rgba(255, 96, 96, 1)",
+          "enable": true
+        }
+      ]
+    },
+    "time": { "from": "now-1h", "to": "now" }
+  }
+}

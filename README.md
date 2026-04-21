@@ -1,29 +1,22 @@
 # ☁️ evaluacion7devops
 
-Proyecto orientado a **DevOps, automatización y documentación técnica de un entregable evaluativo**, útil para mostrar prácticas de configuración y despliegue.
+Proyecto de evaluación enfocado en **DevOps, automatización y organización técnica de entregables**.
 
 ![DevOps](https://img.shields.io/badge/DevOps-practice-0A7E8C)
 
----
+## Descripción
 
-## 📌 Objetivo
+El repositorio se orienta a mostrar prácticas de configuración, versionado o flujo de trabajo bajo un contexto evaluativo y técnico.
 
-Aplicar conceptos de automatización y flujo de trabajo técnico dentro de un contexto de evaluación práctica.
+## Objetivo
 
-## 🧩 Qué aporta
+Aplicar conceptos de DevOps en una entrega concreta y dejar evidencia reusable dentro del portafolio.
 
-- Evidencia de trabajo con repositorios y automatización.
-- Base para seguir creciendo hacia CI/CD más completo.
-- Organización de scripts o configuraciones si aplica.
+## Uso
 
-## ▶️ Uso general
+Revisa scripts, configuraciones y documentación según el contenido del repositorio.
 
-```bash
-git clone git@github.com:Carl0gonzalez/evaluacion7devops.git
-cd evaluacion7devops
-```
-
-## 👤 Autor
+## Autor
 
 **Carlo González**
 
